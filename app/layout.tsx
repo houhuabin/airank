@@ -4,6 +4,7 @@ import './globals.css'
 import NavBar from './NavBar'
 import { Suspense } from 'react'
 import AuthProvider from './auth/Provider'
+import Script from 'next/script'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -22,6 +23,14 @@ export default function RootLayout({
     //<html lang="en" data-theme="dark"></html>
     <html lang="en" data-theme="winter">
 
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-RFNX3HTB3Y" />
+      <Script>
+        {`window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-RFNX3HTB3Y');`}
+      </Script>
       <body className={inter.className}>
         <AuthProvider>
           <NavBar />
