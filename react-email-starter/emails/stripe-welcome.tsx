@@ -18,7 +18,7 @@ const baseUrl = process.env.VERCEL_URL
   : "";
 
 export const StripeWelcomeEmail = () => (
-  <Html>
+  {/*<Html>
     <Head />
     <Preview>You're now ready to make live transactions with Stripe!</Preview>
     <Body style={main}>
@@ -93,7 +93,7 @@ export const StripeWelcomeEmail = () => (
         </Section>
       </Container>
     </Body>
-  </Html>
+  </Html>*/}
 );
 
 export default StripeWelcomeEmail;

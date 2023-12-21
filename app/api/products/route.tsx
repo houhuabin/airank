@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
     if (!validation.success)
         return NextResponse.json(validation.error.errors, { status: 400 });
     const product = await prisma.product.findUnique({
-        where: { name: body.name }
+        where: { id: body.id }
     });
     if (product)
         return NextResponse.json({ error: "product already exist" }, { status: 400 });

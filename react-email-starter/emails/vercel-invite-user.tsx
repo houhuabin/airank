@@ -47,7 +47,7 @@ export const VercelInviteUserEmail = ({
   const previewText = `Join ${invitedByUsername} on Vercel`;
 
   return (
-    <Html>
+    {/*<Html>
       <Head />
       <Preview>{previewText}</Preview>
       <Tailwind>
@@ -135,7 +135,7 @@ export const VercelInviteUserEmail = ({
           </Container>
         </Body>
       </Tailwind>
-    </Html>
+    </Html>*/}
   );
 };
 
