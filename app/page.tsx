@@ -1,4 +1,7 @@
 'use client';
+
+import ImageGrid from './components/ImageGrid';
+
 /*
 import Image from 'next/image'
 import Link from 'next/link'
@@ -23,11 +26,16 @@ export default function Home() {
   // const [isVisable, setVisable] = useState(false);
   return (
     <main className='relative h-screen'>
+
+       <ImageGrid/>
+
+
+
       {/*<Image src="https://bit.ly/react-cover" alt="girl" fill className='object-cover'sizes="(max-width:480px) 100vw,(max-wdith:768) 50vw, 33vw" />
       
       <h1 className='font-poppins'>Hello {session && <span>{session.user!.name}</span>}</h1>
       <h1 >Hello {session && <span>{session.user!.name}</span>}</h1> */
-      }
+      
 
       <button className='btn' onClick={async () => {
         const _ = (await import('lodash')).default;
@@ -41,7 +49,7 @@ export default function Home() {
         console.log(sortedUser);
 
       }}>show</button>
-      {/*isVisable && <HeavyComponent />
+    {/*isVisable && <HeavyComponent />
       <button className='btn' onClick={() => { setVisable(true) }}>show</button>
       {//<ProductCard />
       }

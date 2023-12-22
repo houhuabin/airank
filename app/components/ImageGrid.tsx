@@ -2,10 +2,10 @@
 import React, { FunctionComponent } from 'react';
 
 interface ImageGridProps {
-  page: number; // Dynamic page number
+  page?: number; // Dynamic page number
 }
 
-const ImageGrid= ({ page }:ImageGridProps) => {
+const ImageGrid= ({ page =1}:ImageGridProps) => {
   const folder = "/public/images/page"; // Public folder path including page
 
   return (
