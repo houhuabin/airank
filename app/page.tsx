@@ -25,7 +25,7 @@ export default function Home() {
   //const session = await getServerSession(authOptions);
   // const [isVisable, setVisable] = useState(false);
   return (
-    <main className='relative h-screen'>
+    <main className='mx-auto max-w-[1960px] p-4'>
 
        <ImageGrid/>
 

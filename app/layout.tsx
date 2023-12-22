@@ -43,8 +43,8 @@ export default function RootLayout({
       }
       <body className={poppins.variable}>
         <AuthProvider>
-          <NavBar />
-          <main className='p-5'>
+          
+          <main >
 
             {children}
 
