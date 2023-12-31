@@ -33,7 +33,7 @@ const poppins = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Avatar Store",
+  title: "AI Rank",
   description: "Created by Huabin Hou",
   openGraph: {
     title: "",
