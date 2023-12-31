@@ -1,56 +1,67 @@
-import type { Metadata } from 'next'
-import { Inter, Roboto } from 'next/font/google'
-import localFont from 'next/font/local'
-import './globals.css'
-import NavBar from './NavBar'
-import { Suspense } from 'react'
-import AuthProvider from './auth/Provider'
-import Script from 'next/script'
-import LayoutScript from '@/layoutScript'
+import "@radix-ui/themes/styles.css";
+import "./theme-config.css";
+import "./globals.css";
+import { Container, Theme } from "@radix-ui/themes";
 
+import type { Metadata } from "next";
+import { Inter, Roboto } from "next/font/google";
+import localFont from "next/font/local";
 
-const inter = Inter({ subsets: ['latin'] })
+import NavBar from "./NavBar";
+import { Suspense } from "react";
+import AuthProvider from "./auth/Provider";
+import Script from "next/script";
+import LayoutScript from "@/layoutScript";
+import { SessionProvider } from "next-auth/react";
 
-const roboto = Roboto({ subsets: ['latin'], weight: ['400', '500'] })
+const inter = Inter({
+  subsets: ["latin"],
+  //weight: ["100", "100"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["100", "100"],
+  variable: "--font-roboto",
+});
 
 const poppins = localFont({
   src: "../public/fonts/poppins-regular-webfont.woff2",
-  variable: '--font-poppins',
-
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
-  title: 'Avatar Store',
-  description: 'Created by Huabin Hou',
+  title: "Avatar Store",
+  description: "Created by Huabin Hou",
   openGraph: {
     title: "",
-    description: ""
-  }
-}
+    description: "",
+  },
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     //<html lang="en" data-theme="dark"></html>
-    <html lang="en" data-theme="winter">
+    <html lang="en">
       <LayoutScript />
 
       {
         //< className={poppins.className}>
       }
-      <body className={poppins.variable}>
-        <AuthProvider>
-          
-          <main >
-
-            {children}
-
+      <body className={inter.variable}>
+        <Theme accentColor="violet">
+          <NavBar />
+          <main className="px-5">
+            <Container>{children}</Container>
           </main>
-        </AuthProvider>
+        </Theme>
       </body>
     </html>
-  )
+  );
 }

@@ -11,7 +11,6 @@ export function GET(
     } else {
         return NextResponse.json({ id: 1, name: 'avatar 1', price: 10 });
     }
-
 }
 
 export async function PUT(

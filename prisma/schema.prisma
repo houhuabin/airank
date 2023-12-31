@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -46,6 +46,11 @@ model User {
   image          String?
   accounts       Account[]
   sessions       Session[]
+  role           UserRole
+}
+enum UserRole{
+  ADMIN
+  USER
 }
 
 model VerificationToken {
@@ -60,4 +65,29 @@ model Product {
   id    Int    @id @default(autoincrement())
   name  String
   price Float
+}
+
+model Image {
+  id          Int      @id @default(autoincrement())
+  issue       Int
+  title       String
+  url         String
+  tags        String[]
+  width       Int
+  height      Int
+  description String
+}
+
+model Issue{
+  id Int @id @default(autoincrement())
+  title String @db.VarChar(255)
+  description String @db.Text
+  status IssueStatus @default(OPEN)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+enum IssueStatus{
+  OPEN
+  IN_PROGRESS
+  CLOSE
 }

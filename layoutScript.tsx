@@ -1,15 +1,16 @@
-import Script from "next/script"
+import Script from "next/script";
 
-import React from 'react'
+import React from "react";
 
 const LayoutScript = () => {
-    return (
-        <><GoogleAnalyticsScript /></>
-    )
-}
+  return (
+    // <><GoogleAnalyticsScript /></>
+    <></>
+  );
+};
 
-export default LayoutScript
-
+export default LayoutScript;
+/*
 const GoogleAnalyticsScript = () => {
     return (
         <>
@@ -25,4 +26,4 @@ const GoogleAnalyticsScript = () => {
     )
 
 }
-
+*/

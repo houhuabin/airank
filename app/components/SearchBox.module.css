@@ -1,0 +1,58 @@
+/* styles.css */
+.searchInput:focus {
+  outline: none;
+  box-shadow: 0 0 10px #21ebff; /* 自定义的发光效果 */
+  background-color: white;
+}
+
+.searchLink {
+  margin-top: 5px;
+  position: relative;
+  padding: 4px 10px;
+  height: 2rem;
+
+  color: #4fd1c5;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: black;
+  transition: 0.2s;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0003);
+
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* 非前缀的标准语法 */
+}
+.searchLink:active {
+  background-color: #21ebff;
+  color: #111;
+  box-shadow: 0 0 50px #21ebff;
+}
+
+.searchLink::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 14px;
+  height: 10px;
+  border-left: 2px solid #21ebff;
+  border-top: 2px solid #21ebff;
+  transition: 0.2s;
+}
+.searchLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  width: 14px;
+  height: 10px;
+  border-bottom: 2px solid #21ebff;
+  border-right: 2px solid #21ebff;
+  transition: 0.2s;
+}
+.searchLink:hover::before,
+.searchLink:hover::after {
+  width: 100%;
+  height: 100%;
+}
