@@ -1,8 +1,8 @@
 /* styles.css */
 .searchInput:focus {
   outline: none;
-  box-shadow: 0 0 10px #21ebff; /* 自定义的发光效果 */
-  background-color: white;
+  box-shadow: 0 0 10px #3d4e50; /* 自定义的发光效果 */
+  background-color: rgb(216, 202, 202);
 }
 
 .searchLink {

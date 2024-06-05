@@ -16,6 +16,9 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        "bg-gray-50": "rgb(255, 255, 255)", // 使用您自己的 RGB 值
+      },
     },
   },
   plugins: [require("daisyui"), require("@tailwindcss/typography")],
